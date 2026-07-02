@@ -1,225 +1,400 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fajr Media | فجر مدیا</title>
 
-    <title>Fajr Media | تولید محتوای حرفه‌ای</title>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/doran-font@master/dist/font-face.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+:root{
+    --blue:#0072ff;
+    --light-blue:#328eff;
+    --white:rgba(255,255,255,.18);
+    --border:rgba(255,255,255,.25);
+    --shadow:0 8px 32px rgba(0,0,0,.18);
+}
 
-    <!-- فونت وزیر -->
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v33.003/dist/font-face.css">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Doran',sans-serif;
+    scroll-behavior:smooth;
+}
 
+body{
+    background:
+    radial-gradient(circle at top right,#7ec8ff 0%,transparent 35%),
+    radial-gradient(circle at bottom left,#4b6cff 0%,transparent 40%),
+    linear-gradient(135deg,#007af3,#56b0ff,#4da9ff);
+    min-height:100vh;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(80px);
+    z-index:-1;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 35px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(25px);
+    border:1px solid var(--border);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#ffffffcc;
+    font-size:16px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#dff0ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-box{
+    width:900px;
+    max-width:95%;
+    padding:70px 50px;
+
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(35px);
+    border-radius:40px;
+
+    box-shadow:var(--shadow);
+}
+
+.hero h1{
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:24px;
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+.hero p{
+    line-height:2;
+    color:#ffffff;
+    max-width:800px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 35px;
+    border:none;
+    border-radius:18px;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(20px);
+
+    color:rgb(110, 54, 54);
+    cursor:pointer;
+    transition:.3s;
+    font-size:16px;
+
+    border:1px solid rgba(241, 233, 233, 0.2);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.28);
+}
+
+/* SECTION */
+
+section{
+    padding:100px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+    color:rgb(247, 245, 245);
+    font-size:40px;
+}
+
+/* SERVICES */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    padding:40px 30px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.card h3{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.card p{
+    line-height:2;
+    color:#ffffff;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.work{
+    height:280px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+
+    transition:.4s;
+}
+
+.work:hover{
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+    margin:80px auto 30px;
+
+    width:90%;
+    padding:40px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+footer p{
+    line-height:2;
+    color:#ce9700;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+nav ul{
+    display:none;
+}
+
+.title{
+    font-size:30px;
+}
+
+}
+</style>
 </head>
-
+<title>Fajr Media | فجر مدیا</title>
 <body>
 
-<!-- پس‌زمینه -->
-<div class="circle circle1"></div>
-<div class="circle circle2"></div>
-
-<!-- ================= صفحه اصلی ================= -->
-
-<section id="home" class="page active">
-
-    <header class="glass header">
-
-        <div class="logo">
-
-            Fajr Media
-
-        </div>
-
-        <nav>
-
-            <a href="#">خانه</a>
-
-            <a href="#">خدمات</a>
-
-            <a href="#">نمونه کارها</a>
-
-            <a href="#">تماس با ما</a>
-
-        </nav>
-
-    </header>
-
-
-    <div class="glass hero">
-
-        <span class="badge">
-
-            فجر مدیا | Fajr Media 
-
-        </span>
-
-        <h1>
-
-            تولید محتوای حرفه‌ای برای رشد کسب‌وکار شما
-
-        </h1>
-
-        <p>
-
-            تولید محتوای متنی، ویدیویی، سئو و مدیریت
-            شبکه‌های اجتماعی با استانداردهای روز.
-
-        </p>
-
-        <button onclick="showPage('phonePage')">
-
-            ورود به فجر مدیا | Fajr Media
-
-        </button>
-
+<nav>
+    <div class="logo">
+        Fajr Media
+        <span>| فجر مدیا</span>
     </div>
-    <div class="info-section">
 
-        <div class="glass info-box">
-    
-            <h3>لینک کانال ایتا</h3>
-    
-            <a href="https://eitaa.com/sarbazrayabram" target="_blank">
-    
-                ورود به کانال ایتا
-    
-            </a>
-    
-        </div>
-    
-        <div class="glass info-box">
-    
-            <h3>حقوق سایت</h3>
-    
-            <p>
-                تمامی حقوق این سایت متعلق به فجر مدیا می‌باشد.
-            </p>
-    
-        </div>
-    
-        <div class="glass info-box">
-    
-            <h3>درباره ما</h3>
-    
-            <p>
-                خوشحال می‌شویم در کانال ایتای ما عضو شوید.
-                <br><br>
-                در کانال ایتا آموزش‌های بیشتر و کامل‌تری وجود دارد.
-            </p>
-    
-        </div>
-    
-    </div>
-</section>
+    <ul>
+        <li><a href="#">خانه</a></li>
+        <li><a href="#">خدمات</a></li>
+        <li><a href="#">آثار</a></li>
+        <li><a href="#">وبلاگ</a></li>
+        <li><a href="#">تماس با ما</a></li>
+    </ul>
+</nav>
 
 
+<section class="hero">
 
-<!-- ================= صفحه شماره تلفن ================= -->
+<div class="hero-box">
 
-<section id="phonePage" class="page">
+<h1>فجر مدیا</h1>
 
-    <div class="glass form-card">
+<h2>روایت نور، فرهنگ و ایمان</h2>
 
-        <h2>
+<p>
+تولید محتوای حرفه‌ای مذهبی، فرهنگی و رسانه‌ای با بهره‌گیری از طراحی مدرن،
+خلاقیت هنری و هویت اصیل اسلامی.
+</p>
 
-            شماره تلفن
+<div class="buttons">
+<button class="btn">مشاهده خدمات</button>
+<button class="btn">نمونه آثار</button>
+</div>
 
-        </h2>
-
-        <p>
-
-            لطفاً شماره تلفن خود را وارد کنید
-
-        </p>
-
-        <input
-        type="tel"
-        placeholder="09123456789">
-
-        <button onclick="showPage('codePage')">
-
-            فرستادن پیامک
-
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
+<section class="container">
 
-<!-- ================= صفحه کد ورود ================= -->
+<h2 class="title">خدمات ما</h2>
 
-<section id="codePage" class="page">
+<div class="cards">
 
-    <div class="glass form-card">
+<div class="card">
+<h3>تولید محتوای مذهبی</h3>
+<p>
+تولید محتوای متنی، تصویری و ویدئویی برای مناسبت‌های اسلامی و فرهنگی.
+</p>
+</div>
 
-        <h2>
+<div class="card">
+<h3>موشن گرافیک اسلامی</h3>
+<p>
+طراحی موشن‌های حرفه‌ای برای هیئت‌ها، مساجد و مجموعه‌های فرهنگی.
+</p>
+</div>
 
-            کد ورود
+<div class="card">
+<h3>طراحی پوستر</h3>
+<p>
+بنر، پوستر و هویت بصری مناسبتی با رویکردی مدرن و فاخر.
+</p>
+</div>
 
-        </h2>
+<div class="card">
+<h3>مدیریت رسانه</h3>
+<p>
+مدیریت شبکه‌های اجتماعی مراکز مذهبی و فرهنگی به صورت تخصصی.
+</p>
+</div>
 
-        <p>
-
-            کد ارسال شده را وارد نمایید
-
-        </p>
-
-        <input
-        type="text"
-        placeholder="123456">
-
-        <button onclick="showPage('coursesPage')">
-
-            ورود به دوره‌های رایگان
-
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= صفحه دوره‌های رایگان ================= -->
-
-<section id="coursesPage" class="page">
-
-    <div class="glass course-card">
-
-        <h2>
-
-            دوره‌های رایگان
-
-        </h2>
-
-        <p class="soon">
-
-            دوره‌های رایگان به زودی آپلود می‌شوند
-
-        </p>
-
-        <button
-        class="back-btn"
-        onclick="showPage('home')">
-
-            بازگشت به منوی اصلی
-
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
+<section class="container">
 
-<script src="script.js"></script>
+<h2 class="title">نمونه آثار</h2>
+
+<div class="gallery">
+
+    <div class="work" onclick="window.location.href='ashura.html'">
+        کلیپ
+    </div>
+<div class="work">موشن فاطمیه</div>
+<div class="work">کلیپ ماه رمضان</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h2>Fajr Media | فجر مدیا</h2>
+
+<p>
+روایت نور، فرهنگ و ایمان<br>
+تولید محتوای مذهبی و فرهنگی با استانداردهای مدرن رسانه‌ای
+</p>
+
+</footer>
 
 </body>
-
 </html>
