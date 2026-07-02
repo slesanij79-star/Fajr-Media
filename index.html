@@ -398,3 +398,187 @@ nav ul{
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>پوستر عاشورا | Fajr Media</title>
+
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/doran-font@master/dist/font-face.css" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Doran',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top right,#9fd2ff,transparent 30%),
+    radial-gradient(circle at bottom left,#4f82ff,transparent 40%),
+    linear-gradient(135deg,#60b0ff,#62b6ff,#6bb8ff);
+
+    color:white;
+}
+
+/* هدر شیشه‌ای */
+
+.header{
+
+    width:90%;
+    margin:30px auto;
+
+    padding:20px 40px;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+
+    font-size:28px;
+    font-weight:900;
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.18);
+
+    padding:12px 24px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+/* باکس اصلی */
+
+.video-box{
+
+    width:90%;
+    max-width:1100px;
+
+    margin:50px auto;
+
+    background:rgba(255,255,255,.14);
+
+    backdrop-filter:blur(30px);
+
+    border-radius:40px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.video-box h1{
+
+    margin-bottom:20px;
+
+    font-size:42px;
+}
+
+.video-box p{
+
+    line-height:2;
+
+    color:#eef7ff;
+
+    margin-bottom:40px;
+}
+
+/* قاب ویدیو */
+
+.video-frame{
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+iframe{
+
+    width:100%;
+    height:650px;
+    border:none;
+}
+
+@media(max-width:768px){
+
+    iframe{
+        height:300px;
+    }
+
+    .video-box h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo">
+        Fajr Media | فجر مدیا
+    </div>
+
+    <a href="index.html" class="back-btn">
+        بازگشت
+    </a>
+
+</div>
+
+
+<div class="video-box">
+
+    <h1>کلیـپ</h1>
+
+    <p>
+        مجموعه آثار رسانه‌ای تولید شده توسط فجر مدیا
+    </p>
+
+    <div class="video-frame">
+
+        <iframe
+        src="https://www.aparat.com/video/video/embed/videohash/pvt1v2b/vt/frame"
+        allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+</body>
+</html>
